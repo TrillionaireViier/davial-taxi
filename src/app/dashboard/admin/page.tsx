@@ -11,7 +11,7 @@ export default function AdminDashboard() {
       <aside style={{ width: '250px', background: '#111', padding: '2rem', borderRight: '1px solid #333' }}>
         <h2 style={{ color: 'var(--accent-gold)', marginBottom: '2rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Admin Center</h2>
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {['Overview', 'Dispatch', 'Bookings', 'Drivers', 'Users', 'Financials', 'Marketing', 'Fleet Ops', 'Analytics', 'Security'].map(tab => (
+          {['Overview', 'Dispatch', 'Bookings', 'Drivers', 'Users', 'Financials', 'Marketing', 'Fleet Ops', 'Analytics', 'Security', 'AI Insights'].map(tab => (
             <button 
               key={tab} 
               onClick={() => setActiveTab(tab)}
@@ -444,6 +444,84 @@ export default function AdminDashboard() {
                 <h3 style={{ marginBottom: '1rem' }}>Law Enforcement Portal</h3> {/* Feature 50 */}
                 <p style={{ color: '#888', fontSize: '0.9rem' }}>Securely export trip data for warrants.</p>
                 <button className="btn btn-outline" style={{ marginTop: '1rem', width: '100%' }}>Open Portal</button>
+              </div>
+            </div>
+          </section>
+        )}
+        {/* AI INSIGHTS & INTEGRATIONS (Features 51-60) */}
+        {activeTab === 'AI Insights' && (
+          <section>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>AI Chatbot Assistant</h3> {/* Feature 51 */}
+                <div style={{ background: '#000', padding: '1rem', height: '200px', overflowY: 'auto', border: '1px solid #333', marginBottom: '1rem' }}>
+                  <p style={{ color: 'var(--accent-gold)' }}><strong>DavialAI:</strong> How can I assist you with fleet management today?</p>
+                </div>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <input type="text" placeholder="Ask AI..." style={{ flex: 1, padding: '0.8rem', background: '#000', color: '#fff', border: '1px solid #333' }} />
+                  <button className="btn btn-primary">Send</button>
+                </div>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div style={{ background: 'rgba(255,165,0,0.1)', padding: '1.5rem', borderRadius: '8px', border: '1px solid orange' }}>
+                  <h3 style={{ color: 'orange', marginBottom: '1rem' }}>Predictive Maintenance Alerts</h3> {/* Feature 52 */}
+                  <p style={{ color: '#ccc', fontSize: '0.9rem' }}>AI predicts brake pad failure on Vehicle #204 within 7 days.</p>
+                </div>
+                <div style={{ background: '#1a1a1a', padding: '1.5rem', borderRadius: '8px', border: '1px solid #333' }}>
+                  <h3 style={{ marginBottom: '1rem' }}>Dynamic Pricing Engine</h3> {/* Feature 53 */}
+                  <p style={{ color: '#888', fontSize: '0.9rem' }}>Algorithm Status: <span style={{ color: '#00ff00' }}>Active (Auto-Surge)</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Competitor Pricing Tracker</h3> {/* Feature 54 */}
+                <ul style={{ color: '#ccc', fontSize: '0.9rem', paddingLeft: '1.5rem' }}>
+                  <li>Uber Black: $140 (JFK)</li>
+                  <li>Lyft Lux: $125 (JFK)</li>
+                  <li><strong>Davial: $135 (JFK)</strong></li>
+                </ul>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>API Webhooks Manager</h3> {/* Feature 55 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>3 Active Webhooks to Zapier.</p>
+                <button className="btn btn-outline" style={{ marginTop: '1rem' }}>Configure API</button>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Slack Integration</h3> {/* Feature 56 */}
+                <label style={{ display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer' }}>
+                  <input type="checkbox" defaultChecked style={{ transform: 'scale(1.5)' }} /> Send SOS to #dispatch
+                </label>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Gateway Settings</h3> {/* Feature 57 */}
+                <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1rem' }}>Manage Stripe & PayPal connections.</p>
+                <button className="btn btn-outline">Payment Gateways</button>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Automated Tax Reports</h3> {/* Feature 58 */}
+                <button className="btn btn-primary" style={{ background: '#444' }}>Generate Q3 2026 Report</button>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Driver Matching Algorithm</h3> {/* Feature 59 */}
+                <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '0.5rem' }}>Weight: ETA vs Rating</p>
+                <input type="range" min="0" max="100" defaultValue="70" style={{ width: '100%' }} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#888', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                  <span>Fastest ETA</span>
+                  <span>Highest Rating</span>
+                </div>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Carbon Footprint Tracker</h3> {/* Feature 60 */}
+                <p style={{ fontSize: '2rem', color: '#00ff00' }}>1,204 kg</p>
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>CO2 saved this month by EV fleet.</p>
               </div>
             </div>
           </section>

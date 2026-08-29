@@ -19,8 +19,9 @@ export default function Home() {
           <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '500px' }}>
             The premium chauffeur and taxi service for those who value time and comfort.
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="/login" className="btn btn-primary">Book Now</Link>
+            <Link href="/login" className="btn btn-outline" style={{ borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>Sign Up</Link>
             <Link href="/login" className="btn btn-outline">Get the App</Link>
           </div>
         </div>
