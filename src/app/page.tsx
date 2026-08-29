@@ -21,7 +21,6 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="/login" className="btn btn-primary">Book Now</Link>
-            <Link href="/login" className="btn btn-outline" style={{ borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>Sign Up</Link>
             <Link href="/login" className="btn btn-outline">Get the App</Link>
           </div>
         </div>

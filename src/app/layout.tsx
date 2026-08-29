@@ -18,10 +18,7 @@ function Navbar() {
             <button onClick={logout} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Logout</button>
           </>
         ) : (
-          <>
-            <Link href="/login" className="btn btn-outline">Login</Link>
-            <Link href="/login" className="btn btn-primary" style={{ background: 'var(--accent-gold)', color: '#000' }}>Sign Up</Link>
-          </>
+          <Link href="/login" className="btn btn-outline">Login</Link>
         )}
       </nav>
     </header>
