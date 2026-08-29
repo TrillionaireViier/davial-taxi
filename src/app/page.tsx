@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className="section container">
         <h2 className="section-title text-center">Uncompromising Quality</h2>
-        <p className="section-subtitle text-center">Whether it's an airport transfer or a business meeting, we ensure perfection.</p>
+        <p className="section-subtitle text-center">Whether it&apos;s an airport transfer or a business meeting, we ensure perfection.</p>
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {[

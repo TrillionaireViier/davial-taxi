@@ -15,7 +15,7 @@ export default function Login() {
     <main className="container section text-center" style={{ maxWidth: '400px' }}>
       <h2 className="section-title">Sign In</h2>
       <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-        Hint: Use "admin@davial.com" for Admin access, "driver@davial.com" for Driver, or any other email for User.
+        Hint: Use &quot;admin@davial.com&quot; for Admin access, &quot;driver@davial.com&quot; for Driver, or any other email for User.
       </p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
