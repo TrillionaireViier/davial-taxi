@@ -21,7 +21,7 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <Link href="/login" className="btn btn-primary">Book Now</Link>
-            <Link href="/drivers" className="btn btn-outline">Become a Driver</Link>
+            <Link href="/login" className="btn btn-outline">Get the App</Link>
           </div>
         </div>
       </section>
