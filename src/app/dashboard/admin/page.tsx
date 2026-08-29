@@ -11,7 +11,7 @@ export default function AdminDashboard() {
       <aside style={{ width: '250px', background: '#111', padding: '2rem', borderRight: '1px solid #333' }}>
         <h2 style={{ color: 'var(--accent-gold)', marginBottom: '2rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Admin Center</h2>
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {['Overview', 'Dispatch', 'Bookings', 'Drivers', 'Users', 'Financials'].map(tab => (
+          {['Overview', 'Dispatch', 'Bookings', 'Drivers', 'Users', 'Financials', 'Marketing', 'Fleet Ops', 'Analytics', 'Security'].map(tab => (
             <button 
               key={tab} 
               onClick={() => setActiveTab(tab)}
@@ -124,14 +124,14 @@ export default function AdminDashboard() {
                   <tr style={{ borderBottom: '1px solid #333' }}>
                     <td style={{ padding: '1rem 0' }}>#10492</td>
                     <td>alice@example.com</td>
-                    <td>JFK -> Midtown</td>
+                    <td>JFK -&gt; Midtown</td>
                     <td><span style={{ color: '#00ff00' }}>Active</span></td>
                     <td><button style={{ background: 'transparent', color: 'var(--accent-gold)', border: 'none', cursor: 'pointer' }}>View Details</button></td> {/* Feature 13 */}
                   </tr>
                   <tr style={{ borderBottom: '1px solid #333' }}>
                     <td style={{ padding: '1rem 0' }}>#10491</td>
                     <td>bob@example.com</td>
-                    <td>Downtown -> EWR</td>
+                    <td>Downtown -&gt; EWR</td>
                     <td><span style={{ color: 'red' }}>Cancelled</span></td>
                     <td><button style={{ background: 'transparent', color: 'red', border: 'none', cursor: 'pointer' }}>Process Refund</button></td> {/* Feature 12 */}
                   </tr>
@@ -285,6 +285,170 @@ export default function AdminDashboard() {
             </div>
           </section>
         )}
+
+        {/* MARKETING & GROWTH (Features 31-35) */}
+        {activeTab === 'Marketing' && (
+          <section>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Affiliate Program Dashboard</h3> {/* Feature 31 */}
+                <p style={{ color: '#888' }}>Total Affiliate Payouts this month: <strong style={{ color: 'var(--accent-gold)' }}>$2,450.00</strong></p>
+                <button className="btn btn-outline" style={{ marginTop: '1rem' }}>Manage Affiliates</button>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Referral Link Generator</h3> {/* Feature 32 */}
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <input type="text" readOnly value="https://davial.com/ref/admin22" style={{ flex: 1, padding: '0.8rem', background: '#000', color: '#fff', border: '1px solid #333' }} />
+                  <button className="btn btn-primary">Copy</button>
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Ad Campaign Tracker</h3> {/* Feature 33 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>FB Ads: ROI 150% (Active)</p>
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>Google: ROI 210% (Active)</p>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Email Newsletter</h3> {/* Feature 34 */}
+                <button className="btn btn-outline">Draft New Blast</button>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Push Notifications</h3> {/* Feature 35 */}
+                <button className="btn btn-primary" style={{ background: 'purple' }}>Send Live Broadcast</button>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ADVANCED FLEET OPS (Features 36-40) */}
+        {activeTab === 'Fleet Ops' && (
+          <section>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Maintenance Logs</h3> {/* Feature 36 */}
+                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '1px solid #444' }}>
+                      <th style={{ padding: '1rem 0', color: '#888' }}>Vehicle</th>
+                      <th style={{ padding: '1rem 0', color: '#888' }}>Service Type</th>
+                      <th style={{ padding: '1rem 0', color: '#888' }}>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #333' }}>
+                      <td style={{ padding: '1rem 0' }}>S-Class (NY 1234)</td>
+                      <td>Oil & Tires</td>
+                      <td><span style={{ color: 'orange' }}>Due in 5 days</span></td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #333' }}>
+                      <td style={{ padding: '1rem 0' }}>Escalade (NJ 567)</td>
+                      <td>Brake Pads</td>
+                      <td><span style={{ color: '#00ff00' }}>Completed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div style={{ background: '#1a1a1a', padding: '1.5rem', borderRadius: '8px', border: '1px solid #333' }}>
+                  <h3 style={{ marginBottom: '1rem' }}>Fuel / EV Tracker</h3> {/* Feature 37 */}
+                  <p style={{ color: '#888', fontSize: '0.9rem' }}>Avg cost/mile: $0.18</p>
+                  <p style={{ color: '#888', fontSize: '0.9rem' }}>Total EV charging time: 140h</p>
+                </div>
+                <div style={{ background: 'rgba(255, 165, 0, 0.1)', padding: '1.5rem', borderRadius: '8px', border: '1px solid orange' }}>
+                  <h3 style={{ color: 'orange', marginBottom: '1rem' }}>Insurance Renewal</h3> {/* Feature 38 */}
+                  <p style={{ color: '#ccc', fontSize: '0.9rem' }}>Fleet Policy expires in 45 days.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Vehicle Decommissioning</h3> {/* Feature 39 */}
+                <button className="btn btn-outline" style={{ color: 'red', borderColor: 'red' }}>Retire Old Fleet Vehicles</button>
+              </div>
+              <div style={{ background: '#000', padding: '2rem', borderRadius: '8px', border: '1px solid #333', textAlign: 'center' }}>
+                <h3 style={{ marginBottom: '1rem', color: '#888' }}>Live Dashcam Feed</h3> {/* Feature 40 */}
+                <div style={{ width: '100%', height: '100px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: 'red', fontWeight: 'bold' }}>REC ⏺</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ADVANCED ANALYTICS (Features 41-45) */}
+        {activeTab === 'Analytics' && (
+          <section>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333', height: '250px' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Surge Heatmap (Mock)</h3> {/* Feature 41 */}
+                <div style={{ width: '100%', height: '70%', background: 'linear-gradient(45deg, rgba(255,0,0,0.2) 0%, rgba(255,165,0,0.5) 50%, rgba(255,0,0,0.8) 100%)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#fff', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>High Demand: Airport Zone</span>
+                </div>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Customer Retention</h3> {/* Feature 42 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>VIP Retention: 94%</p>
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>Standard Retention: 62%</p>
+                <hr style={{ borderColor: '#333', margin: '1rem 0' }} />
+                <h3 style={{ marginBottom: '1rem' }}>Driver Churn Rate</h3> {/* Feature 44 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>Monthly Attrition: 2.1% (Healthy)</p>
+              </div>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Predicted Surge Forecaster</h3> {/* Feature 43 */}
+                <p style={{ color: '#ccc' }}>AI Model predicts a <strong style={{ color: 'var(--accent-gold)' }}>2.0x Surge</strong> starting at 5:00 PM due to weather.</p>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Average Wait Time</h3> {/* Feature 45 */}
+                <p style={{ fontSize: '2rem', color: '#00ff00' }}>3.2 mins</p>
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>-0.4 mins compared to last week</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* SECURITY & COMPLIANCE (Features 46-50) */}
+        {activeTab === 'Security' && (
+          <section>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>KYC/AML Identity Verification</h3> {/* Feature 46 */}
+                <p style={{ color: '#888' }}>14 pending driver background checks require manual review.</p>
+                <button className="btn btn-outline" style={{ marginTop: '1rem' }}>Open Review Queue</button>
+              </div>
+              <div style={{ background: 'rgba(255,0,0,0.1)', padding: '2rem', borderRadius: '8px', border: '1px solid red' }}>
+                <h3 style={{ color: 'red', marginBottom: '1rem' }}>Fraud Detection Alerts</h3> {/* Feature 47 */}
+                <ul style={{ color: '#ffaaaa', fontSize: '0.9rem', paddingLeft: '1.5rem' }}>
+                  <li>Suspicious card pattern on Ride #10490 (Blocked)</li>
+                  <li>Multiple failed login attempts for user admin@davial.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Data Privacy (GDPR)</h3> {/* Feature 48 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>3 active account deletion requests.</p>
+                <button className="btn btn-outline" style={{ marginTop: '1rem', width: '100%' }}>Manage Requests</button>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>2FA Security Logs</h3> {/* Feature 49 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>Last login: 2FA verified at 12:34 PM via Authenticator.</p>
+              </div>
+              <div style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '8px', border: '1px solid #333' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Law Enforcement Portal</h3> {/* Feature 50 */}
+                <p style={{ color: '#888', fontSize: '0.9rem' }}>Securely export trip data for warrants.</p>
+                <button className="btn btn-outline" style={{ marginTop: '1rem', width: '100%' }}>Open Portal</button>
+              </div>
+            </div>
+          </section>
+        )}
+
       </main>
     </div>
   );
